@@ -3,7 +3,6 @@ function isWindy(speed) {
 }
 
 let lisbonSpeed = 10;
-
 if (isWindy(lisbonSpeed)) {
   alert('it is windy');
 } else {
