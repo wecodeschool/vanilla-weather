@@ -56,7 +56,7 @@ h1 {
   padding:     0 5px;
 }
 
-.weather-temperature--today {
+.weather-temp--today {
   color:        #333;
   float:        left;
   font-size:    64px;
@@ -67,6 +67,7 @@ h1 {
 
 .weather-view-buttons {
   padding: 15px 0 10px;
+  display: block;
 }
 
 .weather-view__button {
@@ -96,7 +97,7 @@ h1 {
   background-color: linear-gradient(top,#f8f8f8,#f1f1f1);
 }
 
-.weather-view__button--temperature {
+.weather-view__button--temp {
   border-radius: 2px 0 0 2px;
   border-right:  none;
 }
@@ -106,44 +107,44 @@ h1 {
   border-radius: 0 2px 2px 0;
 }
 
-.weather-preview {
+.day__block {
   float:   left;
   padding: 7px;
   width:   12.5%;
 }
 
-.weather-preview-day {
+.day__block-day {
   color: #bababa;
 }
 
-.weather-preview-image {
+.day__block-image {
   display:    block;
   margin:     0 auto;
   max-height: 48px;
   max-width:  48px;
 }
 
-.weather-preview-day {
+.day__block-day {
   text-align: center;
 }
-.weather-preview-temperatures {
+.day__block-temps {
   text-align: center;
 }
 
-.weather-preview-temperature {
+.day__block-temp {
   font-size:   13px;
   line-height: 15px;
 }
 
-.weather-preview-temperature--max {
+.day__block-temp--max {
   color: #878787;
 }
 
-.weather-preview-temperature--min {
+.day__block-temp--min {
   color: #bababa;
 }
 
-.weather-preview--selected {
+.day__block--selected {
   background-color: #fcfcfc;
   border-radius:    1px;
   border:           1px solid #e9e9e9;
