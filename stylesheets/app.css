@@ -67,7 +67,7 @@ h1 {
 
 .weather-view-buttons {
   padding: 15px 0 10px;
-  display: none;
+  /*display: none;*/
 }
 
 .weather-view__button {
