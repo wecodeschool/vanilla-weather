@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
   <link rel="stylesheet" href="stylesheets/app.css">
-
-  <script src="js/app.js"></script>
 </head>
 <body>
   <div class="container">
@@ -70,7 +68,7 @@
         </div>
       </div>
       <div class="days clearfix">
-        <div class="day__block day__block--selected">
+        <div class="day__block day__block--selected" max="18" min="11" conditions="sunny">
           <div class="day__block-day">
             Tue
           </div>
@@ -84,7 +82,7 @@
             </span>
           </div>
         </div>
-        <div class="day__block">
+        <div class="day__block" max="21" min="12" conditions="sunny">
           <div class="day__block-day">
             Wed
           </div>
@@ -98,7 +96,7 @@
             </span>
           </div>
         </div>
-        <div class="day__block">
+        <div class="day__block" max="20" min="12" conditions="partly_cloudy">
           <div class="day__block-day">
             Thu
           </div>
@@ -112,7 +110,7 @@
             </span>
           </div>
         </div>
-        <div class="day__block">
+        <div class="day__block" max="19" min="13" conditions="sunny">
           <div class="day__block-day">
             Fri
           </div>
@@ -126,7 +124,7 @@
             </span>
           </div>
         </div>
-        <div class="day__block">
+        <div class="day__block" max="19" min="13" conditions="partly_cloudy">
           <div class="day__block-day">
             Sat
           </div>
@@ -140,7 +138,7 @@
             </span>
           </div>
         </div>
-        <div class="day__block">
+        <div class="day__block" max="16" min="12" conditions="rain">
           <div class="day__block-day">
             Sun
           </div>
@@ -154,7 +152,7 @@
             </span>
           </div>
         </div>
-        <div class="day__block">
+        <div class="day__block" max="17" min="12" conditions="partly_cloudy">
           <div class="day__block-day">
             Mon
           </div>
@@ -168,7 +166,7 @@
             </span>
           </div>
         </div>
-        <div class="day__block">
+        <div class="day__block" max="17" min="12" conditions="rain_light">
           <div class="day__block-day">
             Tue
           </div>
@@ -186,5 +184,6 @@
     </div>
   </div>
 </div>
+<script src="js/app.js"></script>
 </body>
 </html>
