@@ -9,7 +9,7 @@ function showTemperature() {
   selected.classList.add('day__block--selected');
 }
 
-let elements = document.querySelectorAll('.day__block');
-elements.forEach(function(element, index) {
+let days = document.querySelectorAll('.day__block');
+days.forEach(function(element, index) {
   element.addEventListener('click', showTemperature);
 });
