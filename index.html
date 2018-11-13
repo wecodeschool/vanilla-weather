@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
   <link rel="stylesheet" href="stylesheets/app.css">
-
-  <script src="js/app.js"></script>
 </head>
 <body>
   <div class="container">
@@ -29,7 +27,7 @@
           <div class="col-md-6">
             <div class="clearfix">
               <img src="images/partly_cloudy.png" alt="" class="weather__icon weather__icon--today">
-              <div class="weather-temperature weather-temperature--today">
+              <div class="weather-temp weather-temp--today">
                 17
               </div>
               <div class="weather-unit__text weather-unit__text--today">
@@ -58,115 +56,115 @@
           </div>
         </div>
       </div>
-      <div class="weather-previews clearfix">
-        <div class="weather-preview weather-preview--selected">
-          <div class="weather-preview-day">
+      <div class="days clearfix">
+        <div class="day__block day__block--selected" max="18" min="11" conditions="sunny">
+          <div class="day__block-day">
             Tue
           </div>
-          <img src="images/sunny.png" alt="" class="weather-preview-image">
-          <div class="weather-preview-temperatures">
-            <span class="weather-preview-temperature weather-preview-temperature--max">
+          <img src="images/sunny.png" alt="" class="day__block-image">
+          <div class="day__block-temps">
+            <span class="day__block-temp day__block-temp--max">
               18°
             </span>
-            <span class="weather-preview-temperature weather-preview-temperature--min">
+            <span class="day__block-temp day__block-temp--min">
               11°
             </span>
           </div>
         </div>
-        <div class="weather-preview">
-          <div class="weather-preview-day">
+        <div class="day__block" max="21" min="12" conditions="sunny">
+          <div class="day__block-day">
             Wed
           </div>
-          <img src="images/sunny.png" alt="" class="weather-preview-image">
-          <div class="weather-preview-temperatures">
-            <span class="weather-preview-temperature weather-preview-temperature--max">
+          <img src="images/sunny.png" alt="" class="day__block-image">
+          <div class="day__block-temps">
+            <span class="day__block-temp day__block-temp--max">
               21°
             </span>
-            <span class="weather-preview-temperature weather-preview-temperature--min">
+            <span class="day__block-temp day__block-temp--min">
               12°
             </span>
           </div>
         </div>
-        <div class="weather-preview">
-          <div class="weather-preview-day">
+        <div class="day__block" max="20" min="12" conditions="partly_cloudy">
+          <div class="day__block-day">
             Thu
           </div>
-          <img src="images/partly_cloudy.png" alt="" class="weather-preview-image">
-          <div class="weather-preview-temperatures">
-            <span class="weather-preview-temperature weather-preview-temperature--max">
+          <img src="images/partly_cloudy.png" alt="" class="day__block-image">
+          <div class="day__block-temps">
+            <span class="day__block-temp day__block-temp--max">
               20°
             </span>
-            <span class="weather-preview-temperature weather-preview-temperature--min">
+            <span class="day__block-temp day__block-temp--min">
               12°
             </span>
           </div>
         </div>
-        <div class="weather-preview">
-          <div class="weather-preview-day">
+        <div class="day__block" max="19" min="13" conditions="sunny">
+          <div class="day__block-day">
             Fri
           </div>
-          <img src="images/sunny.png" alt="" class="weather-preview-image">
-          <div class="weather-preview-temperatures">
-            <span class="weather-preview-temperature weather-preview-temperature--max">
+          <img src="images/sunny.png" alt="" class="day__block-image">
+          <div class="day__block-temps">
+            <span class="day__block-temp day__block-temp--max">
               19°
             </span>
-            <span class="weather-preview-temperature weather-preview-temperature--min">
+            <span class="day__block-temp day__block-temp--min">
               13°
             </span>
           </div>
         </div>
-        <div class="weather-preview">
-          <div class="weather-preview-day">
+        <div class="day__block" max="19" min="13" conditions="partly_cloudy">
+          <div class="day__block-day">
             Sat
           </div>
-          <img src="images/partly_cloudy.png" alt="" class="weather-preview-image">
-          <div class="weather-preview-temperatures">
-            <span class="weather-preview-temperature weather-preview-temperature--max">
+          <img src="images/partly_cloudy.png" alt="" class="day__block-image">
+          <div class="day__block-temps">
+            <span class="day__block-temp day__block-temp--max">
               19°
             </span>
-            <span class="weather-preview-temperature weather-preview-temperature--min">
+            <span class="day__block-temp day__block-temp--min">
               13°
             </span>
           </div>
         </div>
-        <div class="weather-preview">
-          <div class="weather-preview-day">
+        <div class="day__block" max="16" min="12" conditions="rain">
+          <div class="day__block-day">
             Sun
           </div>
-          <img src="images/rain.png" alt="" class="weather-preview-image">
-          <div class="weather-preview-temperatures">
-            <span class="weather-preview-temperature weather-preview-temperature--max">
+          <img src="images/rain.png" alt="" class="day__block-image">
+          <div class="day__block-temps">
+            <span class="day__block-temp day__block-temp--max">
               16°
             </span>
-            <span class="weather-preview-temperature weather-preview-temperature--min">
+            <span class="day__block-temp day__block-temp--min">
               12°
             </span>
           </div>
         </div>
-        <div class="weather-preview">
-          <div class="weather-preview-day">
+        <div class="day__block" max="17" min="12" conditions="partly_cloudy">
+          <div class="day__block-day">
             Mon
           </div>
-          <img src="images/partly_cloudy.png" alt="" class="weather-preview-image">
-          <div class="weather-preview-temperatures">
-            <span class="weather-preview-temperature weather-preview-temperature--max">
+          <img src="images/partly_cloudy.png" alt="" class="day__block-image">
+          <div class="day__block-temps">
+            <span class="day__block-temp day__block-temp--max">
               17°
             </span>
-            <span class="weather-preview-temperature weather-preview-temperature--min">
+            <span class="day__block-temp day__block-temp--min">
               12°
             </span>
           </div>
         </div>
-        <div class="weather-preview">
-          <div class="weather-preview-day">
+        <div class="day__block" max="17" min="12" conditions="rain_light">
+          <div class="day__block-day">
             Tue
           </div>
-          <img src="images/rain_light.png" alt="" class="weather-preview-image">
-          <div class="weather-preview-temperatures">
-            <span class="weather-preview-temperature weather-preview-temperature--max">
+          <img src="images/rain_light.png" alt="" class="day__block-image">
+          <div class="day__block-temps">
+            <span class="day__block-temp day__block-temp--max">
               16°
             </span>
-            <span class="weather-preview-temperature weather-preview-temperature--min">
+            <span class="day__block-temp day__block-temp--min">
               12°
             </span>
           </div>
@@ -175,5 +173,6 @@
     </div>
   </div>
 </div>
+<script src="js/app.js"></script>
 </body>
 </html>
