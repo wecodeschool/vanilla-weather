@@ -3,6 +3,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
@@ -14,44 +15,31 @@
     <div class="weather-container">
       <div class="weather-summary">
         <div class="weather-summary-header">
-          <h1>Lisbon</h1>
+          <h1 id="weather-location"></h1>
           <div class="weather-detail__text">
             Tuesday 3:00 PM
           </div>
-          <div class="weather-detail__text">
-            Mostly Sunny
-          </div>
+          <div class="weather-detail__text" id="weather-description"></div>
         </div>
 
         <div class="row">
           <div class="col-md-6">
             <div class="clearfix">
-              <img src="images/partly_cloudy.png" alt="" class="weather__icon weather__icon--today">
+              <img src="" class="weather__icon weather__icon--today">
               <div class="weather-temp weather-temp--today">
-                17
+
               </div>
               <div class="weather-unit__text weather-unit__text--today">
                 °C
-              </div>
-              <div class="weather-unit__text-separator">
-                |
-              </div>
-              <div class="weather-unit__text weather-unit__text--today">
-                <a href="#">
-                  °F
-                </a>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="weather-detail__text">
-              Precipitation: 0%
+              Precipitation: <span id="precipitation-probality">0</span>%
             </div>
             <div class="weather-detail__text">
-              Humidity: 65%
-            </div>
-            <div class="weather-detail__text">
-              Wind: 16 km/h
+              Wind: <span id="wind-speed"></span> km/h
             </div>
           </div>
         </div>
@@ -61,35 +49,31 @@
           <div class="day__block-day">
             Tue
           </div>
-          <img src="images/sunny.png" alt="" class="day__block-image">
+          <img src="" alt="" class="day__block-image">
           <div class="day__block-temps">
             <span class="day__block-temp day__block-temp--max">
-              18°
             </span>
             <span class="day__block-temp day__block-temp--min">
-              11°
             </span>
           </div>
         </div>
-        <div class="day__block" max="21" min="12" conditions="sunny">
+        <div class="day__block">
           <div class="day__block-day">
             Wed
           </div>
-          <img src="images/sunny.png" alt="" class="day__block-image">
+          <img src="" alt="" class="day__block-image">
           <div class="day__block-temps">
             <span class="day__block-temp day__block-temp--max">
-              21°
             </span>
             <span class="day__block-temp day__block-temp--min">
-              12°
             </span>
           </div>
         </div>
-        <div class="day__block" max="20" min="12" conditions="partly_cloudy">
+        <div class="day__block">
           <div class="day__block-day">
             Thu
           </div>
-          <img src="images/partly_cloudy.png" alt="" class="day__block-image">
+          <img src="" alt="" class="day__block-image">
           <div class="day__block-temps">
             <span class="day__block-temp day__block-temp--max">
               20°
@@ -99,73 +83,63 @@
             </span>
           </div>
         </div>
-        <div class="day__block" max="19" min="13" conditions="sunny">
+        <div class="day__block">
           <div class="day__block-day">
             Fri
           </div>
-          <img src="images/sunny.png" alt="" class="day__block-image">
+          <img src="" alt="" class="day__block-image">
           <div class="day__block-temps">
             <span class="day__block-temp day__block-temp--max">
-              19°
             </span>
             <span class="day__block-temp day__block-temp--min">
-              13°
             </span>
           </div>
         </div>
-        <div class="day__block" max="19" min="13" conditions="partly_cloudy">
+        <div class="day__block">
           <div class="day__block-day">
             Sat
           </div>
-          <img src="images/partly_cloudy.png" alt="" class="day__block-image">
+          <img src="" alt="" class="day__block-image">
           <div class="day__block-temps">
             <span class="day__block-temp day__block-temp--max">
-              19°
             </span>
             <span class="day__block-temp day__block-temp--min">
-              13°
             </span>
           </div>
         </div>
-        <div class="day__block" max="16" min="12" conditions="rain">
+        <div class="day__block">
           <div class="day__block-day">
             Sun
           </div>
-          <img src="images/rain.png" alt="" class="day__block-image">
+          <img src="" alt="" class="day__block-image">
           <div class="day__block-temps">
             <span class="day__block-temp day__block-temp--max">
-              16°
             </span>
             <span class="day__block-temp day__block-temp--min">
-              12°
             </span>
           </div>
         </div>
-        <div class="day__block" max="17" min="12" conditions="partly_cloudy">
+        <div class="day__block">
           <div class="day__block-day">
             Mon
           </div>
-          <img src="images/partly_cloudy.png" alt="" class="day__block-image">
+          <img src="" alt="" class="day__block-image">
           <div class="day__block-temps">
             <span class="day__block-temp day__block-temp--max">
-              17°
             </span>
             <span class="day__block-temp day__block-temp--min">
-              12°
             </span>
           </div>
         </div>
-        <div class="day__block" max="16" min="12" conditions="rain_light">
+        <div class="day__block">
           <div class="day__block-day">
             Tue
           </div>
-          <img src="images/rain_light.png" alt="" class="day__block-image">
+          <img src="" alt="" class="day__block-image">
           <div class="day__block-temps">
             <span class="day__block-temp day__block-temp--max">
-              16°
             </span>
             <span class="day__block-temp day__block-temp--min">
-              12°
             </span>
           </div>
         </div>
