@@ -14,7 +14,6 @@ let city   = 'Lisbon';
 
 axios.get(root + '/' + path + '?q=' + city + '&appid=' + apiKey + '&units=metric')
   .then(function(response) {
-    // console.log(response.data)
     place.innerHTML         = response.data.name;
     description.innerHTML   = response.data.weather[0].main;
     temperature.innerHTML   = Math.round(response.data.main.temp);
@@ -23,8 +22,6 @@ axios.get(root + '/' + path + '?q=' + city + '&appid=' + apiKey + '&units=metric
     icon.setAttribute('src', 'http://openweathermap.org/img/w/' + response.data.weather[0].icon + '.png')
   });
 
-
-  // https://api.openweathermap.org/data/2.5/forecast?q=Lisbon&units=metric&appid=5f472b7acba333cd8a035ea85a0d4d4c
 path = 'data/2.5/forecast';
 axios.get(root + '/' + path + '?q=' + city + '&appid=' + apiKey + '&units=metric')
   .then(function(response) {
