@@ -31,8 +31,8 @@ function refreshWeather(queryParams) {
       place.innerHTML         = response.data.name;
       description.innerHTML   = response.data.weather[0].main;
       temperature.innerHTML   = Math.round(response.data.main.temp);
-      wind.innerHTML          = Math.round(response.data.wind.speed);
-      precipitation.innerHTML = Math.round(response.data.main.humidity);
+      wind.innerHTML          = Math.round(response.data.wind.speed) + 'km/h';
+      precipitation.innerHTML = Math.round(response.data.main.humidity) + '%';
 
       icon.setAttribute('src', 'http://openweathermap.org/img/w/' + response.data.weather[0].icon + '.png')
     });
@@ -43,6 +43,7 @@ function refreshWeather(queryParams) {
         let day = new Date(response.data.list[index].dt_txt);
         element.querySelector('.day__block-date').innerHTML = friendlyDate(day);
         element.querySelector('.day__block-temp').innerHTML = Math.round(response.data.list[index].main.temp);
+
         element.querySelector('.day__block-image').setAttribute('src', 'http://openweathermap.org/img/w/' + response.data.list[index].weather[0].icon + '.png')
       });
     });
