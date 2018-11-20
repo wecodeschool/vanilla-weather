@@ -52,7 +52,6 @@ navigator.geolocation.getCurrentPosition(function (position) {
       let query = 'q=' + form.querySelector('#weather__form-location').value + '&appid=' + apiKey + '&units=metric'
       refreshWeather(query);
       event.preventDefault();
-
     });
 
     refreshBtn.addEventListener('click', function() {
