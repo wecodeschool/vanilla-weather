@@ -113,7 +113,7 @@ h1 {
   width:   12.5%;
 }
 
-.day__block-day {
+.day__block-date {
   color: #bababa;
 }
 
@@ -124,7 +124,7 @@ h1 {
   max-width:  48px;
 }
 
-.day__block-day {
+.day__block-date {
   text-align: center;
 }
 .day__block-temps {
