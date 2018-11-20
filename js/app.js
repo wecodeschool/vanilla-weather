@@ -22,9 +22,7 @@ function friendlyDate(date) {
   return days[date.getDay() - 1] + ' ' + date.getHours() + ":" + minutes;
 };
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function (position) {
-
+navigator.geolocation.getCurrentPosition(function (position) {
     function refreshWeather(query) {
       axios.get(root + '/data/2.5/weather?' + query)
         .then(function (response) {
@@ -51,7 +49,6 @@ if (navigator.geolocation) {
     };
 
     form.addEventListener('submit', function(event) {
-      ;
       let query = 'q=' + form.querySelector('#weather__form-location').value + '&appid=' + apiKey + '&units=metric'
       refreshWeather(query);
       event.preventDefault();
@@ -66,6 +63,3 @@ if (navigator.geolocation) {
     let query = 'lat=' + Math.round(position.coords.latitude) + '&lon=' + Math.round(position.coords.longitude) + '&appid=' + apiKey + '&units=metric'
     refreshWeather(query);
   });
-} else {
-  alert('We need access to your location, please refresh');
-}
