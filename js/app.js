@@ -8,11 +8,10 @@ let temperature   = document.querySelector('.weather-temp--today');
 let wind          = document.querySelector('#wind-speed');
 let refreshBtn    = document.querySelector('#weather-refresh');
 let form          = document.querySelector('#weather__form');
-let formLocation = document.querySelector('#weather__form-location');
+let formLocation  = form.querySelector('#weather__form-location');
 
 let root   = 'https://api.openweathermap.org';
 let apiKey = '5f472b7acba333cd8a035ea85a0d4d4c';
-
 
 function friendlyDate(date) {
   let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -21,7 +20,6 @@ function friendlyDate(date) {
 
   return days[date.getDay()] + ' ' + date.getHours() + ":" + minutes;
 };
-
 
 function refreshWeather(queryParams) {
   let apiParams = 'appid=' + apiKey + '&units=metric';
