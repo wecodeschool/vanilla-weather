@@ -42,8 +42,7 @@ function refreshWeather(queryParams) {
       document.querySelectorAll('.day__block').forEach(function (element, index) {
         let day = new Date(response.data.list[index].dt_txt);
         element.querySelector('.day__block-date').innerHTML = friendlyDate(day);
-        element.querySelector('.day__block-temp--max').innerHTML = Math.round(response.data.list[index].main.temp_max);
-        element.querySelector('.day__block-temp--min').innerHTML = Math.round(response.data.list[index].main.temp_min);
+        element.querySelector('.day__block-temp').innerHTML = Math.round(response.data.list[index].main.temp);
         element.querySelector('.day__block-image').setAttribute('src', 'http://openweathermap.org/img/w/' + response.data.list[index].weather[0].icon + '.png')
       });
     });

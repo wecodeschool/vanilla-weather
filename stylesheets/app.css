@@ -140,14 +140,7 @@ button {
 .day__block-temp {
   font-size:   13px;
   line-height: 15px;
-}
-
-.day__block-temp--max {
   color: #878787;
-}
-
-.day__block-temp--min {
-  color: #bababa;
 }
 
 .day__block--selected {
