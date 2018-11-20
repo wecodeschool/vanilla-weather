@@ -13,12 +13,12 @@ let path   = 'data/2.5/weather';
 let city   = 'Lisbon';
 
 
-function friendlyDate(date) {
+function friendlyDate(input) {
   let days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-  let minutes = date.getMinutes();
+  let minutes = input.getMinutes();
   if (minutes < 10) minutes += '0'
 
-  return days[date.getDay() - 1] + ' ' + date.getHours() + ":" + minutes;
+  return days[input.getDay() - 1] + ' ' + input.getHours() + ":" + minutes;
 };
 
 axios.get(root + '/' + path + '?q=' + city + '&appid=' + apiKey + '&units=metric')
