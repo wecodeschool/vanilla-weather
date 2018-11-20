@@ -7,6 +7,8 @@ let precipitation = document.querySelector('#precipitation-probality');
 let temperature   = document.querySelector('.weather-temp--today');
 let wind          = document.querySelector('#wind-speed');
 let refreshBtn    = document.querySelector('#weather-refresh');
+let form          = document.querySelector('#weather__form');
+let formLocation = document.querySelector('#weather__form-location');
 
 let root   = 'https://api.openweathermap.org';
 let apiKey = '5f472b7acba333cd8a035ea85a0d4d4c';
@@ -22,36 +24,47 @@ function friendlyDate(date) {
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function (position) {
-  function refreshWeather() {
-    axios.get(root + '/data/2.5/weather?lat=' + Math.round(position.coords.latitude) + '&lon=' + Math.round(position.coords.longitude) + '&appid=' + apiKey + '&units=metric')
-      .then(function (response) {
 
-        date.innerHTML = friendlyDate(new Date());
-        place.innerHTML = response.data.name;
-        description.innerHTML = response.data.weather[0].main;
-        temperature.innerHTML = Math.round(response.data.main.temp);
-        wind.innerHTML = Math.round(response.data.wind.speed);
-        precipitation.innerHTML = Math.round(response.data.main.humidity);
-        icon.setAttribute('src', 'http://openweathermap.org/img/w/' + response.data.weather[0].icon + '.png')
-      });
+    function refreshWeather(query) {
+      axios.get(root + '/data/2.5/weather?' + query)
+        .then(function (response) {
 
-    axios.get(root + '/data/2.5/forecast?lat=' + Math.round(position.coords.latitude) + '&lon=' + Math.round(position.coords.longitude) + '&appid=' + apiKey + '&units=metric')
-      .then(function (response) {
-        document.querySelectorAll('.day__block').forEach(function (element, index) {
-          let day = new Date(response.data.list[index].dt_txt);
-          element.querySelector('.day__block-date').innerHTML = friendlyDate(day);
-          element.querySelector('.day__block-temp--max').innerHTML = Math.round(response.data.list[index].main.temp_max);
-          element.querySelector('.day__block-temp--min').innerHTML = Math.round(response.data.list[index].main.temp_min);
-          element.querySelector('.day__block-image').setAttribute('src', 'http://openweathermap.org/img/w/' + response.data.list[index].weather[0].icon + '.png')
+          date.innerHTML = friendlyDate(new Date());
+          place.innerHTML = response.data.name;
+          description.innerHTML = response.data.weather[0].main;
+          temperature.innerHTML = Math.round(response.data.main.temp);
+          wind.innerHTML = Math.round(response.data.wind.speed);
+          precipitation.innerHTML = Math.round(response.data.main.humidity);
+          icon.setAttribute('src', 'http://openweathermap.org/img/w/' + response.data.weather[0].icon + '.png')
         });
-      });
-    }
 
-    refreshBtn.addEventListener('click', function() {
-      refreshWeather();
+      axios.get(root + '/data/2.5/forecast?' + query)
+        .then(function (response) {
+          document.querySelectorAll('.day__block').forEach(function (element, index) {
+            let day = new Date(response.data.list[index].dt_txt);
+            element.querySelector('.day__block-date').innerHTML = friendlyDate(day);
+            element.querySelector('.day__block-temp--max').innerHTML = Math.round(response.data.list[index].main.temp_max);
+            element.querySelector('.day__block-temp--min').innerHTML = Math.round(response.data.list[index].main.temp_min);
+            element.querySelector('.day__block-image').setAttribute('src', 'http://openweathermap.org/img/w/' + response.data.list[index].weather[0].icon + '.png')
+          });
+        });
+    };
+
+    form.addEventListener('submit', function(event) {
+      ;
+      let query = 'q=' + form.querySelector('#weather__form-location').value + '&appid=' + apiKey + '&units=metric'
+      refreshWeather(query);
+      event.preventDefault();
+
     });
 
-    refreshWeather();
+    refreshBtn.addEventListener('click', function() {
+      let query = 'lat=' + Math.round(position.coords.latitude) + '&lon=' + Math.round(position.coords.longitude) + '&appid=' + apiKey + '&units=metric'
+      refreshWeather(query);
+    });
+
+    let query = 'lat=' + Math.round(position.coords.latitude) + '&lon=' + Math.round(position.coords.longitude) + '&appid=' + apiKey + '&units=metric'
+    refreshWeather(query);
   });
 } else {
   alert('We need access to your location, please refresh');
