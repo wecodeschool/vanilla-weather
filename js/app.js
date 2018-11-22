@@ -16,7 +16,7 @@ let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
 function friendlyDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let minutes = date.getMinutes();
-  if (minutes < 10) minutes += "0";
+  if (minutes < 10) minutes = "0" + minutes;
 
   return days[date.getDay()] + " " + date.getHours() + ":" + minutes;
 }
