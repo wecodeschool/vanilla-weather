@@ -13,12 +13,25 @@ let formLocation = form.querySelector("#weather__form-location");
 let root = "https://api.openweathermap.org";
 let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
 
-function friendlyDate(date) {
+function friendlyDay(dayNumber) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  let minutes = date.getMinutes();
-  if (minutes < 10) minutes = "0" + minutes;
+  return days[dayNumber];
+}
 
-  return days[date.getDay()] + " " + date.getHours() + ":" + minutes;
+function friendlyMinutes(minutesNumber) {
+  if (minutesNumber < 10) {
+    return "0" + minutesNumber;
+  } else {
+    return minutesNumber;
+  }
+}
+
+function friendlyDate(date) {
+  let day = friendlyDay(date.getDay());
+  let hours = date.getHours();
+  let minutes = friendlyMinutes(date.getMinutes());
+
+  return day + " " + hours + ":" + minutes;
 }
 
 function refreshWeather(queryParams) {
